@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Mauricio Quiñones Díaz (Tulkas)" />
+    <meta name="description" content="Summation of areas of and equation" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Summation of areas of and equation</title>
+    <link rel="stylesheet" href="style.css" class="text/css" />
+  </head>
+  <body>
+    <header>
+      <h1>Sumatoria de áreas de una ecuación</h1>
+    </header>
+
+    <main>
+      <section class="formula">
+        <h2>Formula</h2>
+        <figure class="picture">
+          <img
+            src="/img/equation.jpg"
+            alt="Equation"
+            title="Equation"
+            width="400"
+            height="110"
+          />
+        </figure>
+      </section>
+
+      <section class="coefficients">
+        <h2>Coeficientes</h2>
+        <div>
+          <p>
+            <label for="a">a:</label>
+            <input
+              type="number"
+              name="coefficient a"
+              id="a"
+              placeholder="Default: 0.1"
+              readonly
+            />
+          </p>
+        </div>
+
+        <div>
+          <p>
+            <label for="b">b:</label>
+            <input
+              type="number"
+              name="coefficient b"
+              id="b"
+              placeholder="Default: 0.6"
+              readonly
+            />
+          </p>
+        </div>
+
+        <div>
+          <p>
+            <label for="c">c:</label>
+            <input
+              type="number"
+              name="coefficient c"
+              id="c"
+              placeholder="Default: -0.7"
+              readonly
+            />
+          </p>
+        </div>
+
+        <div>
+          <p>
+            <label for="d">d:</label>
+            <input
+              type="number"
+              name="coefficient d"
+              id="d"
+              placeholder="Default: -5.7"
+              readonly
+            />
+          </p>
+        </div>
+
+        <div>
+          <p>
+            <label for="e">e:</label>
+            <input
+              type="number"
+              name="coefficient e"
+              id="e"
+              placeholder="Default: 2.00"
+              readonly
+            />
+          </p>
+        </div>
+
+        <div>
+          <p>
+            <label for="f">f:</label>
+            <input
+              type="number"
+              name="coefficient f"
+              id="f"
+              placeholder="Default: 4.00"
+              readonly
+            />
+          </p>
+        </div>
+
+        <div>
+          <p>
+            <label for="g">g:</label>
+            <input
+              type="number"
+              name="coefficient g"
+              id="g"
+              placeholder="Default: 3.00"
+              readonly
+            />
+          </p>
+        </div>
+      </section>
+
+      <section class="x-value">
+        <h2>X inicial y X final</h2>
+        <div>
+          <p>
+            <label for="xInit">X inicial:</label>
+            <input
+              type="number"
+              name="x init"
+              id="xInit"
+              placeholder="Default: -7.00"
+              readonly
+            />
+          </p>
+        </div>
+
+        <div>
+          <p>
+            <label for="xEnd">X final:</label>
+            <input
+              type="number"
+              name="x end"
+              id="xEnd"
+              placeholder="Default: 7.00"
+              readonly
+            />
+          </p>
+        </div>
+      </section>
+
+      <button id="btnCalArea">Calcular</button>
+      <button id="refresh">Refrescar</button>
+
+      <section class="result">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Punto corte 1</th>
+              <th scope="col">Punto corte 2</th>
+              <th scope="col">Área (JavaScript)</th>
+              <th scope="col">Tiempo miliseg (JavaScript)</th>
+              <th scope="col">Área (PHP)</th>
+              <th scope="col">Tiempo miliseg (PHP)</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider">
+            <tr>
+              <th scope="row" id="row">1</th>
+              <td><span id="cutP11"></span></td>
+              <td><span id="cutP12"></span></td>
+              <td><span id="areaJS1"></span></td>
+              <td><span id="timeJS1"></span></td>
+              <td>
+                <span id="areaPHP1"
+                  ><?php echo number_format($totalArea1, 4); ?></span
+                >
+              </td>
+              <td>
+                <span id="timePHP1"
+                  ><?php echo number_format($totalTime1); ?></span
+                >
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td><span id="cutP21"></span></td>
+              <td><span id="cutP22"></span></td>
+              <td><span id="areaJS2"></span></td>
+              <td><span id="timeJS2"></span></td>
+              <td>
+                <span id="areaPHP2"
+                  ><?php echo number_format($totalArea2, 4); ?></span
+                >
+              </td>
+              <td>
+                <span id="timePHP2"
+                  ><?php echo number_format($totalTime2, 4); ?></span
+                >
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td colspan="2">Total</td>
+              <td><span id="totalAreaJS"></span></td>
+              <td><span id="totalTimeJS"></span></td>
+              <td>
+                <span id="totalAreaPHP"
+                  ><?php echo number_format($totalAreaPHP, 4); ?></span
+                >
+              </td>
+              <td>
+                <span id="totalTimePHP"
+                  ><?php echo number_format($totalTime2, 4); ?></span
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="/src/main.js"></script>
+  </body>
+</html>
