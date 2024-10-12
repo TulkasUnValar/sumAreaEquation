@@ -1,4 +1,13 @@
 <?php
+$visual = file_get_contents('index.html');
+$visual = file_get_contents('main.js');
+$visual = str_replace('{areaPHP1}', $totalArea1, '$visual');
+$visual = str_replace('{timePHP1}', ($totalTime1), '$visual');
+$visual = str_replace('{areaPHP2}', $totalArea2, '$visual');
+$visual = str_replace('{timePHP2}', ($endTime2 - $startTime1), '$visual');
+$visual = str_replace('{totalAreaPHP}', $totalAreaPHP, '$visual');
+$visual = str_replace('{totalTimePHP}', $totalTime2, '$visual');
+echo $visual;
 
 class AreaUnderCurve
 {
